@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <title>Packman</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            touch-action: none;
+        }
+        canvas {
+            border: 3px solid #333;
+            border-radius: 8px;
+            background-color: #000;
+            max-width: 100%;
+            max-height: 90vh;
+        }
+        .touch-hint {
+            display: none;
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        @media (pointer: coarse) {
+            .touch-hint {
+                display: block;
+            }
+        }
+        @media (max-width: 620px) {
+            body {
+                padding: 5px;
+            }
+            canvas {
+                border-width: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="600" height="680"></canvas>
+    <div class="touch-hint">Swipe to move</div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
